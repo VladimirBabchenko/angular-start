@@ -55,6 +55,6 @@ StudentsStatistic.prototype.performance = function (surname) {
 }
 
 
-var statictic = new StudentsStatistic(babchenko, sidorova, petrova, 10);
-console.log(statictic.attendance("Petrova"))
-console.log(statictic.performance());
+var statistic = new StudentsStatistic(babchenko, sidorova, petrova, 10);
+console.log(statistic.attendance("Petrova"))
+console.log(statistic.performance());

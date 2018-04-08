@@ -34,8 +34,8 @@ Student.prototype.absent = function () {
     this.presence.length < 25 && this.presence.push(false);
 };
 
-Student.prototype.getStudentPresence = function() {
-    return this.presence.filter(val1 => val1).length/this.presence.length;
+Student.prototype.getStudentPresence = function () {
+    return this.presence.filter(val1 => val1).length / this.presence.length;
 }
 
 Student.prototype.summary = function () {
