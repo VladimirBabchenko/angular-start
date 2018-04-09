@@ -30,8 +30,8 @@ StudentsStatistic.prototype.attendance = function (surname) {
         return studentInd;
     }
 
-    return (this.students.filter(student =>
-        student.presence[0]).length / this.students.length).toFixed(2)
+    return (Number.isFinite(surname) && surname <= 25 && this.students.filter(student =>
+        student.presence[surname]).length / this.students.length).toFixed(2)
 }
 
 StudentsStatistic.prototype.performance = function (surname) {
@@ -43,18 +43,18 @@ StudentsStatistic.prototype.performance = function (surname) {
         this.students.find(student => student.surname === surname);
 
     if (searchingStudent) {
-        sortByStudentsAttendance.forEach((student, rate) => {
+        sortByStudentMarks.forEach((student, rate) => {
             student.surname === surname && (studentInd = rate + 1);
         });
         return studentInd;
     }
 
-    this.students.forEach(student =>
-        studentsAverageMark += student.marks[0]);
+    Number.isFinite(surname) && surname <= 25 && this.students.forEach(student =>
+        studentsAverageMark += student.marks[surname]);
     return (studentsAverageMark / this.students.length).toFixed(2);
 }
 
 
 var statistic = new StudentsStatistic(babchenko, sidorova, petrova, 10);
-console.log(statistic.attendance("Petrova"))
-console.log(statistic.performance());
+console.log(statistic.attendance(1))
+console.log(statistic.performance(3));

@@ -64,6 +64,6 @@ sidorova.absent();
 petrova.present();
 petrova.present();
 petrova.present();
-// console.log(babchenko.getStudentPresence())
-// console.log(babchenko);
+console.log(babchenko.getStudentPresence())
+console.log(babchenko);
 
