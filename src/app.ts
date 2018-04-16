@@ -1,20 +1,26 @@
-class Creature {
-    private age: any = [];
-    constructor(
-        
-        public readonly name: string,
-        public surname: string,
-    ) { }
-}
+import Student from "./ts/student";
+import StudentsGroup from "./ts/students-group";
 
-class Human extends Creature {
-    constructor(name, surname) {
-        super(name, surname)
-    }
-}
+const Babchenko = new Student("Vova", "Babchenko", 1982);
+const Sidorov = new Student("Sid", "Sidorov", 1982);
+const Petrova = new Student("Lena", "Petrova", 1920);
 
-const creature: Creature = new Creature("vova", "bab")
-console.log(creature)
+Babchenko.mark = [10, 20, 30, 40];
+Babchenko.present();
+Babchenko.present();
+Babchenko.present();
 
-const human = new Human("Vova", "Bab");
-console.log();
+Sidorov.mark = [90, 20, 10, 40];
+Sidorov.present();
+Sidorov.present();
+Sidorov.absent();
+
+Petrova.mark = [0, 20, 30, 40];
+Petrova.present();
+Petrova.present();
+Petrova.present();
+
+const group = new StudentsGroup(Babchenko, Sidorov, Petrova);
+
+console.log(group.attendance(3));
+console.log(group);
