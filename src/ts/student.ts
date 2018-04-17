@@ -1,5 +1,3 @@
-import { getAverage } from "./helpers";
-
 class Student {
     private _marks: number[] = [];
     private _presence: boolean[] = [];
