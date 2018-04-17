@@ -1,6 +1,11 @@
 import Student from "./student";
 
-class StudentsGroup {
+interface IStudentGroup {
+    attendance(data: string | number): number;
+    performance(data: string | number): number;
+}
+
+class StudentsGroup implements IStudentGroup {
     private _students: Student[] = [];
 
     constructor(...args: Student[]) {

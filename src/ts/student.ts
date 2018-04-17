@@ -1,11 +1,21 @@
-class Student {
+interface IStudent {
+    readonly name: string;
+    readonly surname: string;
+    readonly yearBirth: number;
+    present(): void;
+    absent(): void;
+    getCurrentAge(): number;
+    summary(): string;
+}
+
+class Student implements IStudent {
     private _marks: number[] = [];
     private _presence: boolean[] = [];
 
     constructor(
-        readonly name: string,
-        readonly surname: string,
-        readonly yearBirth: number
+        public name: string,
+        public surname: string,
+        public yearBirth: number
     ) { }
 
     present(): void {

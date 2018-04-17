@@ -1,9 +1,9 @@
 import Student from "./ts/student";
 import StudentsGroup from "./ts/students-group";
 
-const Babchenko = new Student("Vova", "Babchenko", 1982);
-const Sidorov = new Student("Sid", "Sidorov", 1982);
-const Petrova = new Student("Lena", "Petrova", 1920);
+const Babchenko: Student = new Student("Vova", "Babchenko", 1982);
+const Sidorov: Student = new Student("Sid", "Sidorov", 1982);
+const Petrova: Student = new Student("Lena", "Petrova", 1920);
 
 Babchenko.mark = [10, 20, 30, 40];
 Babchenko.present();
@@ -19,6 +19,7 @@ Petrova.mark = [0, 20, 30, 40];
 Petrova.present();
 Petrova.present();
 Petrova.present();
-
-const group = new StudentsGroup(Babchenko, Sidorov, Petrova);
+console.log(Babchenko);
+console.log(Babchenko.getCurrentAge());
+const group: StudentsGroup = new StudentsGroup(Babchenko, Sidorov, Petrova);
 console.log(group.performance("Sidorov"));
